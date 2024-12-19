@@ -87,7 +87,6 @@ class MainR:
     def get_ids(self):
         query_params = st.query_params
         st.session_state.user_id = query_params.get("user_id", [None])[0]
-        st.session_state.group_id = query_params.get("group", [None])[0]
         st.session_state.theme = query_params.get("talktheme", [None])[0]
 
     def prepare_firestore(self):
@@ -229,7 +228,7 @@ class MainR:
             group_url = (
                 "https://qualtricsxmgjnrsqd4j.qualtrics.com/jfe/form/SV_eWJgtPBlKY1vCKy"
             )
-            group_url_with_id = f"{group_url}?user_id={st.session_state.user_id}&group={st.session_state.group_id}&talktheme={st.session_state.theme}"
+            group_url_with_id = f"{group_url}?user_id={st.session_state.user_id}&day=3"
             st.markdown(
                 f'これで今回の会話は終了です。こちらをクリックして今日起こったことを回答してください。: <a href="{group_url_with_id}" target="_blank">リンク</a>',
                 unsafe_allow_html=True,
