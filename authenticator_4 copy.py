@@ -4,7 +4,7 @@ import json
 
 class Authenticator:
     def __init__(self):
-        self.BASE_URL = "https://predictchoices-mr3y9dfar8ypf66dszgrxr.streamlit.app/"
+        self.BASE_URL = "https://predictchoices-8lrdhg7s5e6iwvyjv7n4c6.streamlit.app/"
         # 特別なURLを定義
         self.SPECIAL_URL = "https://www.google.com"
 
@@ -46,7 +46,7 @@ class Authenticator:
                 )
 
     def forward(self):
-        st.title("Authentication for Day 1")
+        st.title("Authentication for Day 5")
         addresed_accounts, attendance_list = self.get_attendance_attributes()
         self.vertify_user_id(addresed_accounts)
         self.make_user_url(addresed_accounts, attendance_list)
