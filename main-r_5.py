@@ -206,7 +206,7 @@ class MainR:
         st.session_state["chat_input_disabled"] = False
 
     def forward(self):
-        st.title("MainR")
+        st.title("MainR Day 5")
 
         if "count" not in st.session_state:
             st.session_state.count = 0
