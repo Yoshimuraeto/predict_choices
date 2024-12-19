@@ -1,0 +1,6 @@
+.streamlit/
+venv/
+diary/
+text/text_chunks.txt
+make_vector_database.py
+predict_tester_answer.py

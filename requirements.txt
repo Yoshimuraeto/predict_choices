@@ -1,0 +1,11 @@
+firebase_admin
+chromadb==0.5.15
+tiktoken
+openai
+langchain
+langchain_community
+langchain_openai
+langchain_chroma
+streamlit
+streamlit_chat
+pysqlite3-binary
