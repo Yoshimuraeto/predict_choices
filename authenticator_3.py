@@ -4,7 +4,7 @@ import json
 
 class Authenticator:
     def __init__(self):
-        self.BASE_URL = "https://predictchoices-jqcgy4a9heyvaz8mlciw3v.streamlit.app/"
+        self.BASE_URL = "https://predictchoices-yrekjceyxumwgtbgazwh6u.streamlit.app/"
         # 特別なURLを定義
         self.SPECIAL_URL = "https://www.google.com"
 
