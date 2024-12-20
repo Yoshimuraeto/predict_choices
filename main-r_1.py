@@ -62,7 +62,7 @@ class MainR:
         )
 
         self.SYSTEM_PREFIX = """あなたはAIエージェントです。
-        以下のcontextに基づいて質問に回答して下さい。
+        以下のcontextに基づいて質問に回答して下さい。ただし、400文字以内で回答してください。
         
         {context}"""
 
