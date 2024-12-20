@@ -135,6 +135,7 @@ class MainR:
             st.session_state.chat_history = []
 
         if "vector_db" not in st.session_state:
+            st.error(f"{theme}のベクトルデータベースの読み込みに失敗しました")
             chroma_db_path = f"vector_database/{theme}"
             st.session_state.vector_db = Chroma(
                 persist_directory=chroma_db_path,
