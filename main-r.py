@@ -227,7 +227,7 @@ class MainR:
 
         if st.session_state.count >= 5:
             group_url = (
-                "https://qualtricsxmgjnrsqd4j.qualtrics.com/jfe/form/SV_eWJgtPBlKY1vCKy"
+                "https://nagoyapsychology.qualtrics.com/jfe/form/SV_4TtjS4mbY06vxcy"
             )
             group_url_with_id = f"{group_url}?user_id={st.session_state.user_id}&day={st.session_state.day}"
             st.success(
