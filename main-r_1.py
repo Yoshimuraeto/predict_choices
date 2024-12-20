@@ -86,9 +86,8 @@ class MainR:
 
     def get_ids(self):
         query_params = st.query_params
-        st.session_state.user_id = query_params.get("user_id", [None])[0]
-        st.error(f"{st.session_state.user_id}")
-        st.session_state.theme = str(query_params.get("talktheme", [None]))
+        st.session_state.user_id = query_params.get("user_id", [None])
+        st.session_state.theme = query_params.get("talktheme", [None])
 
     def prepare_firestore(self):
         try:
@@ -222,7 +221,7 @@ class MainR:
         if st.session_state.db is None:
             st.error("Firebaseの認証に失敗しました")
 
-        self.prepare_model_with_memory(st.session_state.theme)
+        self.prepare_model_with_memory(str(st.session_state.theme))
 
         self.display_chat_history()
 
