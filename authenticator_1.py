@@ -35,7 +35,6 @@ class Authenticator:
             if st.session_state.user_id in addresed_accounts:
                 attendance_attributes = attendance_list[st.session_state.user_id]
                 theme = attendance_attributes[0]
-                st.error(f"{theme}の会話を開始します。")
                 group_url = self.BASE_URL
                 group_url_with_id = (
                     f"{group_url}?user_id={st.session_state.user_id}&talktheme={theme}"
