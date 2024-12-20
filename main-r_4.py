@@ -86,8 +86,8 @@ class MainR:
 
     def get_ids(self):
         query_params = st.query_params
-        st.session_state.user_id = query_params.get("user_id", [None])[0]
-        st.session_state.theme = query_params.get("talktheme", [None])[0]
+        st.session_state.user_id = query_params.get("user_id", [None])
+        st.session_state.theme = query_params.get("talktheme", [None])
 
     def prepare_firestore(self):
         try:
@@ -135,7 +135,7 @@ class MainR:
             st.session_state.chat_history = []
 
         if "vector_db" not in st.session_state:
-            chroma_db_path = f"vector_database/{theme}"
+            chroma_db_path = f"vector_database/{str(theme)}"
             st.session_state.vector_db = Chroma(
                 persist_directory=chroma_db_path,
                 embedding_function=self.embed,
