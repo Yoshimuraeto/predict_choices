@@ -87,7 +87,7 @@ class MainR:
     def get_ids(self):
         query_params = st.query_params
         st.session_state.user_id = query_params.get("user_id", [None])[0]
-        st.session_state.theme = query_params.get("talktheme", [None])[0]
+        st.session_state.theme = query_params.get("talktheme", [None])
 
     def prepare_firestore(self):
         try:
