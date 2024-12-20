@@ -34,7 +34,7 @@ class MainR:
     def __init__(self):
         self.chat_model = ChatOpenAI(
             openai_api_key=st.secrets["OPENAI_API_KEY"],
-            model_name="gpt-3.5-turbo",
+            model_name="gpt-4o",
             temperature=0.5,
             streaming=True,
             max_tokens=1024,
@@ -62,7 +62,7 @@ class MainR:
         )
 
         self.SYSTEM_PREFIX = """あなたはAIエージェントです。
-        以下のcontextに基づいて質問に回答して下さい。
+        以下のcontextに基づいて質問に回答して下さい。ただし、300文字以内で回答してください。
         
         {context}"""
 
@@ -88,6 +88,7 @@ class MainR:
         query_params = st.query_params
         st.session_state.user_id = query_params.get("user_id", [None])
         st.session_state.theme = query_params.get("talktheme", [None])
+        st.session_state.day = query_params.get("day", [None])
 
     def prepare_firestore(self):
         try:
@@ -206,7 +207,7 @@ class MainR:
         st.session_state["chat_input_disabled"] = False
 
     def forward(self):
-        st.title("MainR Day 2")
+        st.title("MainR Day 1")
 
         if "count" not in st.session_state:
             st.session_state.count = 0
@@ -228,10 +229,9 @@ class MainR:
             group_url = (
                 "https://qualtricsxmgjnrsqd4j.qualtrics.com/jfe/form/SV_eWJgtPBlKY1vCKy"
             )
-            group_url_with_id = f"{group_url}?user_id={st.session_state.user_id}&day=2"
-            st.markdown(
-                f'これで今回の会話は終了です。こちらをクリックして今日起こったことを回答してください。: <a href="{group_url_with_id}" target="_blank">リンク</a>',
-                unsafe_allow_html=True,
+            group_url_with_id = f"{group_url}?user_id={st.session_state.user_id}&day={st.session_state.day}"
+            st.success(
+                f'これで今回の会話は終了です。こちらをクリックしてアンケートに回答してください。: <a href="{group_url_with_id}" target="_blank">リンク</a>'
             )
             self.disable_chat_input()
 
