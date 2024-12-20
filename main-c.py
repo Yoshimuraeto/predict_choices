@@ -173,9 +173,10 @@ class MainC:
             group_url = (
                 "https://nagoyapsychology.qualtrics.com/jfe/form/SV_4TtjS4mbY06vxcy"
             )
-            group_url_with_id = f"{group_url}?user_id={st.session_state.user_id}&talktheme={st.session_state.theme}&day={st.session_state.day}"
-            st.success(
-                f'これで今回の会話は終了です。こちらをクリックしてアンケートに回答してください。: <a href="{group_url_with_id}" target="_blank">リンク</a>'
+            group_url_with_id = f"{group_url}?user_id={st.session_state.user_id}&day={st.session_state.day}"
+            st.markdown(
+                f'\nこれで今回の会話は終了です。こちらをクリックしてアンケートに回答してください。: <a href="{group_url_with_id}" target="_blank">リンク</a>',
+                unsafe_allow_html=True,
             )
             self.disable_chat_input()
 
