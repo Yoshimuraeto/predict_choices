@@ -136,7 +136,7 @@ class MainR:
 
         if "vector_db" not in st.session_state:
             st.error(f"{theme}のベクトルデータベースの読み込みに失敗しました")
-            chroma_db_path = f"vector_database/{theme}"
+            chroma_db_path = f"vector_database/{str(theme)}"
             st.session_state.vector_db = Chroma(
                 persist_directory=chroma_db_path,
                 embedding_function=self.embed,
@@ -221,7 +221,7 @@ class MainR:
         if st.session_state.db is None:
             st.error("Firebaseの認証に失敗しました")
 
-        self.prepare_model_with_memory(str(st.session_state.theme))
+        self.prepare_model_with_memory(st.session_state.theme)
 
         self.display_chat_history()
 
