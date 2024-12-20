@@ -4,7 +4,7 @@ import json
 
 class Authenticator:
     def __init__(self):
-        self.BASE_URL = "https://predictchoices-yrekjceyxumwgtbgazwh6u.streamlit.app/"
+        self.BASE_URL = "https://predictchoices-dwahmkazj6s4gjspzxhsrf.streamlit.app/"
         # 特別なURLを定義
         self.SPECIAL_URL = "https://www.google.com"
 
@@ -36,9 +36,7 @@ class Authenticator:
                 attendance_attributes = attendance_list[st.session_state.user_id]
                 theme = attendance_attributes[0]
                 group_url = self.BASE_URL
-                group_url_with_id = (
-                    f"{group_url}?user_id={st.session_state.user_id}&talktheme={theme}"
-                )
+                group_url_with_id = f"{group_url}?user_id={st.session_state.user_id}&talktheme={theme}&day=3"
                 st.success(f"ようこそ、{st.session_state.user_id} さん！")
                 st.markdown(
                     f"こちらのリンクをクリックして、今日の会話を開始してください。: <a href='{group_url_with_id}' target='_blank'>リンク</a>",

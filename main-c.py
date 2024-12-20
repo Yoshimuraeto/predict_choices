@@ -50,7 +50,7 @@ class MainC:
         return st.session_state.store[session_id]
 
     def get_ids(self):
-        query_params = st.experimental_get_query_params()
+        query_params = st.query_params
         st.session_state.user_id = query_params.get("user_id", [None])
         st.session_state.theme = query_params.get("talktheme", [None])
         st.session_state.day = query_params.get("day", [None])
