@@ -207,8 +207,6 @@ class MainR:
         st.session_state["chat_input_disabled"] = False
 
     def forward(self):
-        st.title("MainR Day 1")
-
         if "count" not in st.session_state:
             st.session_state.count = 0
 
@@ -217,6 +215,8 @@ class MainR:
             st.session_state.db = self.prepare_firestore()
             self.get_ids()
             st.session_state.initge = ["今日は何がありましたか？"]
+
+        st.title(f"Main Day {st.session_state.day}")
 
         if st.session_state.db is None:
             st.error("Firebaseの認証に失敗しました")

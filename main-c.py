@@ -151,7 +151,6 @@ class MainC:
         st.session_state["chat_input_disabled"] = False
 
     def forward(self):
-        st.title("MainR")
 
         if "count" not in st.session_state:
             st.session_state.count = 0
@@ -162,6 +161,8 @@ class MainC:
             self.prepare_memory(self.chat_model, self.PROMPT)
             self.get_ids()
             st.session_state.initge = ["今日は何がありましたか？"]
+
+        st.title(f"Main Day {st.session_state.day}")
 
         if st.session_state.db is None:
             st.write("Firebaseの認証に失敗しました")
