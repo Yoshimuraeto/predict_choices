@@ -107,6 +107,7 @@ class MainC:
             )
 
     def display_chat_history(self):
+        st.session_state.chat_placeholder = st.empty()
         # チャットのメッセージの履歴作成と表示
         if "message_history" not in st.session_state:
             st.session_state.message_history = []
@@ -114,21 +115,21 @@ class MainC:
             message(
                 st.session_state.initge[0],
                 key="init_greeting_plus",
-                avatar_style="micah",
+                logo="https://raw.githubusercontent.com/Yoshimuraeto/main-c/refs/heads/main/img/AI_picture.png",
             )
             for i in range(len(st.session_state.message_history)):
                 message(
                     st.session_state.message_history[i]["user_content"],
                     is_user=True,
                     key=str(i),
-                    avatar_style="adventurer",
+                    logo="https://raw.githubusercontent.com/Yoshimuraeto/main-c/refs/heads/main/img/user_picture.png",
                     seed="Nala",
                 )
                 key_generated = str(i) + "keyg"
                 message(
                     st.session_state.message_history[i]["assistant_content"],
                     key=str(key_generated),
-                    avatar_style="micah",
+                    logo="https://raw.githubusercontent.com/Yoshimuraeto/main-c/refs/heads/main/img/AI_picture.png",
                 )
 
     def generate_and_store_response(self, user_input, db):
