@@ -123,7 +123,6 @@ class MainC:
                     is_user=True,
                     key=str(i),
                     logo="https://raw.githubusercontent.com/Yoshimuraeto/main-c/refs/heads/main/img/user_picture.png",
-                    seed="Nala",
                 )
                 key_generated = str(i) + "keyg"
                 message(
