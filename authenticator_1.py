@@ -50,7 +50,7 @@ class Authenticator:
         <style>
         #MainMenu {visibility: hidden;}
         footer {visibility: hidden;}
-        button._terminalButton_rix23_138 {visibility: hidden;}
+        ._terminalButton_rix23_138 {visibility: hidden;}
         </style>
         """
         addresed_accounts, attendance_list = self.get_attendance_attributes()
