@@ -49,8 +49,8 @@ class Authenticator:
         hide_streamlit_style = """
         <style>
         #MainMenu {visibility: hidden;}
-        footer {visibility: hidden;}
         ._terminalButton_rix23_138 {visibility: hidden;}
+        footer {visibility: hidden;}
         </style>
         """
         addresed_accounts, attendance_list = self.get_attendance_attributes()
