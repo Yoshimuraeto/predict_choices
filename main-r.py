@@ -216,6 +216,28 @@ class MainR:
             st.session_state.initge = ["今日は何がありましたか？"]
 
         st.title(f"Main Day {st.session_state.day}")
+        # フッターを非表示にするためのコード
+        hide_streamlit_style = """
+        <style>
+        #MainMenu {
+            visibility: hidden;
+            height: 0%;
+        }
+        header {
+            visibility: hidden;
+            height: 0%;
+        }
+        footer {
+            visibility: hidden;
+            height: 0%;
+        }
+        button {
+            visibility: hidden;
+            height: 0%;
+        }
+        </style>
+        """
+        st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
         if st.session_state.db is None:
             st.error("Firebaseの認証に失敗しました")

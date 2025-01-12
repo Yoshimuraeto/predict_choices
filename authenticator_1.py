@@ -66,10 +66,10 @@ class Authenticator:
         }
         </style>
         """
+        st.markdown(hide_streamlit_style, unsafe_allow_html=True)
         addresed_accounts, attendance_list = self.get_attendance_attributes()
         self.vertify_user_id(addresed_accounts)
         self.make_user_url(addresed_accounts, attendance_list)
-        st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
 
 if __name__ == "__main__":
