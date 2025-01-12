@@ -45,6 +45,15 @@ class Authenticator:
 
     def forward(self):
         st.title("Authentication for Day 1")
+        # フッターを非表示にするためのコード
+        hide_streamlit_style = """
+        <style>
+        #MainMenu {visibility: hidden;}
+        footer {visibility: hidden;}
+        button {visibility: hidden;}
+        </style>
+        """
+        st.markdown(hide_streamlit_style, unsafe_allow_html=True)
         addresed_accounts, attendance_list = self.get_attendance_attributes()
         self.vertify_user_id(addresed_accounts)
         self.make_user_url(addresed_accounts, attendance_list)
