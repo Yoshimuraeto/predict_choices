@@ -50,7 +50,7 @@ class Authenticator:
         <style>
         #MainMenu {visibility: hidden;}
         footer {visibility: hidden;}
-        ._terminalButton_rix23_138 {visibility: hidden;}
+        button._terminalButton_rix23_138.__web-inspector-hide-shortcut__ {visibility: hidden;}
         </style>
         """
         st.markdown(hide_streamlit_style, unsafe_allow_html=True)
