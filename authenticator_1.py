@@ -48,9 +48,22 @@ class Authenticator:
         # フッターを非表示にするためのコード
         hide_streamlit_style = """
         <style>
-        #MainMenu {visibility: hidden;}
-        ._terminalButton_rix23_138 {visibility: hidden;}
-        footer {visibility: hidden;}
+        #MainMenu {
+            visibility: hidden;
+            height: 0%;
+        }
+        header {
+            visibility: hidden;
+            height: 0%;
+        }
+        footer {
+            visibility: hidden;
+            height: 0%;
+        }
+        button {
+            visibility: hidden;
+            height: 0%;
+        }
         </style>
         """
         addresed_accounts, attendance_list = self.get_attendance_attributes()
