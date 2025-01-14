@@ -30,7 +30,7 @@ class MainC:
             streaming=True,
             max_tokens=1024,
         )
-        self.SYSTEM_PREFIX = "あなたはAIアシスタントです。 以下はAIアシスタントとの会話です。 このアシスタントは親切で、クリエイティブで、賢く、とてもフレンドリーです。"
+        self.SYSTEM_PREFIX = "あなたはAIアシスタントです。 以下はAIアシスタントとの会話です。 このアシスタントは親切で、クリエイティブで、賢く、とてもフレンドリーです。あなたはuserのinputに関する質問を最後にします。"
         self.PROMPT = ChatPromptTemplate.from_messages(
             [
                 SystemMessagePromptTemplate.from_template(self.SYSTEM_PREFIX),
