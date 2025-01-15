@@ -160,6 +160,7 @@ class MainC:
             st.session_state.db = self.prepare_firestore()
             self.prepare_memory(self.chat_model, self.PROMPT)
             self.get_ids()
+            st.write(st.session_state.user_id)
             st.session_state.initge = ["今日は何がありましたか？"]
 
         st.title(f"Main Day {st.session_state.day}")
